@@ -1,0 +1,256 @@
+body {
+    background-image: url(../assets/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.bg-h {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(../assets/bg-mint.webp);
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+.homepage {
+    background-image: url(../assets/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: come-up 0.5s;
+}  
+
+@keyframes come-up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .borders {
+        width: 800px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.45);
+
+        .hp-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 150px;
+
+            h1 {
+                font-size: 48px;
+                margin: 20px;
+                color: #000;
+                user-select: contain;
+                &::before {
+                    content: "NFTAdventure";
+                    position: absolute;
+                    transform: translateX(-3px) translateY(-3px);
+                    color: #FFDC00;
+                    font-weight: bold;
+                }
+            }
+            h3 {
+                user-select: none;
+            }
+        }
+
+        .hp-navigation {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            text-align: center;
+            user-select: none;
+
+
+            .hp-nav {
+                color: #000;
+                font-size: xx-large;
+                text-decoration: none;
+                margin-top: 20px;
+            }
+                            
+            .mint {
+                &::before {
+                    content: "MINTING";
+                    position: absolute;
+                    transform: translateX(-3px) translateY(-3px);
+                    color: white;
+                    font-weight: bold;
+                }
+                &:hover, &:focus {
+                    color: #FFDC00;
+                    animation: link 1s reverse infinite;
+                }
+
+                @keyframes link {
+                    0% {
+                        transform: translateY(-3px);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                    100% {
+                        transform: translateY(-3px);
+                    }
+                }
+            }
+            .stacking {
+                color: rgb(77, 77, 77);
+                font-style: oblique;
+                text-decoration: none;
+                margin-right: 50px;
+                margin-left: 50px;
+            }
+        }
+
+        .hp-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            .link-img {
+                margin: 10px;
+                width: 64px;
+                transition-duration: 0.2s;
+                &:hover, &:focus {
+                    transform: scale(1.14);
+                }
+            }
+        }
+
+        .hp-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+
+            &:hover, &:focus {
+                color: #FFDC00;
+                animation: whitepaper 1s reverse infinite;
+            }
+
+            @keyframes whitepaper {
+                0% {
+                    transform: translateY(-3px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(-3px);
+                }
+            }
+
+            .hp-whitepaper {
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-img {
+                margin: 10px;
+                width: 64px;
+                transition-duration: 0.2s;
+                margin: 10px;
+                &:hover, &:focus {
+                    transform: scale(1.14);
+                }
+            }
+
+            .footer-text {
+                text-decoration: none;
+                font-size: x-large;
+                color: #000;
+                margin-left: 20px;
+                .hp-whitepaper {
+                    display: flex;
+                    flex-direction: column;
+                }                
+                
+                &::before {
+                    content: "WHITEPAPER";
+                    position: absolute;
+                    transform: translateX(-3px) translateY(-3px);
+                    color: white;
+                    font-weight: bold;
+                }
+                &:hover, &:focus {
+                    color: #FFDC00;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 790px){
+    .homepage{
+        .borders {
+            .hp-top {
+                margin-top: 100px;
+            }
+            .hp-navigation {
+                margin: 20px;
+            }
+            .hp-links {
+                margin: 20px;
+            }
+            .hp-footer {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 605px){
+    .homepage {
+        .borders {
+            width: 90%;
+            .hp-navigation {
+                .hp-nav {
+                    font-size: x-large;
+                }
+            }
+            .hp-top {
+                h1 {
+                    font-size: 30px;
+                    padding: 0 10px;
+                }
+                h3 {
+                    font-size: x-small;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+    .homepage .borders .hp-footer .footer-text {
+        margin-left: 5px;
+        font-size: 19px;
+    }
+
+    .homepage .borders .hp-links .link-img, .homepage .borders .hp-footer .footer-img {
+        width: 48px;
+    }
+}
+
+
+@media screen and (max-width: 430px){
+    .homepage .borders .hp-top h1 {
+        font-size: 22px;
+    }
+}

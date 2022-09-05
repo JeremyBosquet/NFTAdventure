@@ -1,0 +1,205 @@
+.mintpage {
+    background-image: url(../assets/bg-mint.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: come-in 0.8s;
+}  
+
+@keyframes come-in {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.mintpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .borders {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        
+        .minted {
+            color: white;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .mint-button-d {
+            text-decoration: none;
+            button {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background: none;
+                color: white;
+                padding: 10px;
+                border: 2px solid white;
+                border-radius: 5px;
+                cursor: pointer;
+
+
+                &:hover, &:focus {
+                    background-color: #ffdd000e;
+                    border: 2px solid #FFDC00;
+                }
+
+                img {
+                    width: 24px;
+                    margin-right: 10px;
+                }
+            }
+            .yellow, .top {
+                color: #FFDC00; 
+                border: 2px solid #FFDC00;
+            }
+
+            .yellow {
+                display: none;
+            }
+        }
+
+        .progress {
+            padding-bottom: 10px;
+            width: 600px;
+            height: 80px;
+            border: 3px solid white;
+            border-radius: 5px;
+            margin-top: 100px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            .ship {
+                position: relative;
+                transform: translateX(-24px);
+                transition-duration: 1.2s;
+                width: 96px;
+            }
+        }
+        .mint-top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+
+            h1 {
+                font-size: 48px;
+                margin: 20px;
+                color: #FFDC00;
+                user-select: none;
+                &::before {
+                    content: "Minting";
+                    position: absolute;
+                    transform: translateX(-3px) translateY(-3px);
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+            h3 {
+                user-select: none;
+            }
+        }
+
+        .number-mint {
+            display: flex;
+            margin: 20px;
+
+            .mint {
+                border: none;
+                background: none;
+                color: white;
+                font-size: x-large;
+                margin: 20px;
+                cursor: pointer;
+                transition-duration: 0.2s;
+
+                &:hover, &:focus {
+                    color: #FFDC00;
+                    animation: link 1s infinite;
+                }
+            }
+        }
+
+        .buy {
+            margin-top: 20px;
+            width: auto;
+            color: white;
+
+            .flex {
+                display: flex;
+                width: auto;
+                justify-content: space-between;
+                align-items: center;
+            
+                span {
+                    font-size: x-large;
+                    padding: 20px 0;
+                    width: 60px;
+                    text-align: center;
+                    color: #FFDC00;
+                    background-color: rgba(255, 255, 255, 0.158);
+                    border: 5px solid white;
+                    border-radius: 2px;
+                    user-select: none;
+                }
+                .selectnum {
+                    display: block;
+                    border: none;
+                    background: none;
+                    color: white;
+                    margin-left: 20px;
+                    font-size: xx-large;
+                    user-select: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .mintpage .borders .mint-button-d .top {
+        display: none;
+    }
+    .mintpage .borders .mint-button-d .yellow {
+        display: block;
+    }
+    .mintpage {
+        .borders {
+            width: 90%;
+            .mint-top {
+                flex-direction: column-reverse;
+
+                h1 {
+                    font-size: 30px;
+                    padding: 0 10px;
+                }
+                h3 {
+                    font-size: x-small;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 660px){
+    .mintpage .borders .progress {
+        width: 265px;
+        height: 50px;
+        .ship {
+            width: 64px;
+        }
+    }
+}
